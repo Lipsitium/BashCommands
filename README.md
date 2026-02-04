@@ -1,4 +1,7 @@
 # BashCommands
+Note that, I personally use them in the ".bashrc", but I'll save the commands as individual files.
+
+
 ### Compile and Execute Assembly
 Self-explanatory, it also compiles to name "exe" by default.
 
