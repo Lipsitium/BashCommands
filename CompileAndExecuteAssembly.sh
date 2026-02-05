@@ -1,4 +1,4 @@
-
+#Simple command to compile and execute assembly files
 #Copyright (C) 2026  Lipsitium
 
 #This program is free software: you can redistribute it and/or modify
