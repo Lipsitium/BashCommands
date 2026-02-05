@@ -26,6 +26,11 @@ ce(){
         if [[ "${1/m}" == "-d" ]]; then
                 directory=${2%/}
         fi
+        if [[ ! -d $directory ]]; then
+                echo "ERROR: "$directory": directory doesn't exist."
+                return 1
+        fi
+
         exe="$directory/exe"
         file="$directory/$last.s"
 
@@ -33,11 +38,10 @@ ce(){
                 exe="$directory/$last"
         fi
         if [[ ! -e $file ]]; then
-                echo "ERROR: not an assembly file"
+                echo "ERROR: "${@: -1}": the file isn't an assembly file or doesn't exist."
                 return 1
         fi
 
         gcc -nostdlib -o $exe $file
         $exe 
 }
-
