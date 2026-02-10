@@ -34,6 +34,7 @@ ce(){
         fi
 
         exe="$directory/exe"
+        buffer="$directory/bufferce"
         file="$directory/$last.s"
 
         if [[ "${1/d}" == "-m" ]]; then
@@ -44,6 +45,12 @@ ce(){
                 return 1
         fi
 
-        gcc -nostdlib -o $exe $file
+        gcc -nostdlib -o $buffer $file
+        if [[ ! -e $buffer ]]; then
+                echo "ERROR: Couldn't compile"
+                return 1
+        fi
+        mv $buffer $exe
         $exe 
 }
+
