@@ -25,6 +25,8 @@ ce(){
         last=${@: -1}
         last=${last%.s}
         directory="."
+        buffer="/tmp/${last}tmp"
+
         if [[ "${1/m}" == "-d" ]]; then
                 directory=${2%/}
         fi
@@ -34,7 +36,6 @@ ce(){
         fi
 
         exe="$directory/exe"
-        buffer="$directory/bufferce"
         file="$directory/$last.s"
 
         if [[ "${1/d}" == "-m" ]]; then
