@@ -11,6 +11,7 @@ it sources the ".bashrc" file. It doesn't have any arguments.
 
 **Compile and Execute (ce)** </br>
 It compiles to name "exe" by default.
+Also only can be used with gcc compiler.
 
 ce [fileName] -> compiles and executes in current directory.</br>
 ce -d [directory] [fileName] ->  compiles and executes in the specified directory.</br>
